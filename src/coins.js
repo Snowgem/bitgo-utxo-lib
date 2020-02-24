@@ -52,6 +52,8 @@ function getMainnet (network) {
     case networks.zcash:
     case networks.zcashTest:
       return networks.zcash
+    case networks.bitgreen:
+      return networks.bitgreen
   }
   throw new TypeError(`invalid network`)
 }
@@ -173,6 +175,13 @@ function isZcash (network) {
 
 /**
  * @param {Network} network
+ * @returns {boolean} true iff network is bitgreen
+ */
+function isBitgreen (network) {
+  return getMainnet(network) === networks.bitgreen
+}
+/**
+ * @param {Network} network
  * @returns {boolean} returns true iff network is any of the network stated in the argument
  */
 const isValidNetwork = typeforce.oneOf(
@@ -182,7 +191,8 @@ const isValidNetwork = typeforce.oneOf(
   isBitcoinSV,
   isDash,
   isLitecoin,
-  isZcash
+  isZcash,
+  isBitgreen
 )
 
 module.exports = {
