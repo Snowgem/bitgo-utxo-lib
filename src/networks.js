@@ -21,7 +21,8 @@ const coins = {
   BTG: 'btg',
   LTC: 'ltc',
   ZEC: 'zec',
-  DASH: 'dash'
+  DASH: 'dash',
+  BITG: 'bitg'
 }
 
 function getDefaultBip32Mainnet () {
@@ -192,5 +193,13 @@ module.exports = {
       4: 0x2bb40e60
     },
     coin: coins.ZEC
-  }
+  },
+  bitgreen: {
+    messagePrefix: '\x19Bitgreen Signed Message:\n',
+    bip32: getDefaultBip32Mainnet(),
+    pubKeyHash: 0x38,
+    scriptHash: 0x06,
+    wif: 0x46,
+    coin: coins.BITG
+  },
 }

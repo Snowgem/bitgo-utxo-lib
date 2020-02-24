@@ -193,6 +193,7 @@ module.exports = {
   DASH: networks.dash.coin,
   LTC: networks.litecoin.coin,
   ZEC: networks.zcash.coin,
+  BITG: networks.bitgreen.coin,
 
   getNetworkList,
   getNetworkName,
