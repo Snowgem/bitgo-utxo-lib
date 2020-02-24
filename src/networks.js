@@ -197,9 +197,9 @@ module.exports = {
   bitgreen: {
     messagePrefix: '\x19Bitgreen Signed Message:\n',
     bip32: getDefaultBip32Mainnet(),
-    pubKeyHash: 0x38,
+    pubKeyHash: 0x26,
     scriptHash: 0x06,
-    wif: 0x46,
+    wif: 0x2e,
     coin: coins.BITG
   },
 }
