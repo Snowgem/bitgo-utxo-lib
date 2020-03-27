@@ -22,7 +22,8 @@ const coins = {
   LTC: 'ltc',
   ZEC: 'zec',
   DASH: 'dash',
-  BITG: 'bitg'
+  BITG: 'bitg',
+  DGB: 'dgb'
 }
 
 function getDefaultBip32Mainnet () {
@@ -201,5 +202,13 @@ module.exports = {
     scriptHash: 0x06,
     wif: 0x2e,
     coin: coins.BITG
+  },
+  digibyte: {
+    messagePrefix: '\x19DigiByte Signed Message:\n',
+    bip32: getDefaultBip32Mainnet(),
+    pubKeyHash: 0x1e,
+    scriptHash: 0x05,
+    wif: 0x2e,
+    coin: coins.DGB
   },
 }
