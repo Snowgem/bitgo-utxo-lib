@@ -23,7 +23,8 @@ const coins = {
   ZEC: 'zec',
   DASH: 'dash',
   BITG: 'bitg',
-  DGB: 'dgb'
+  DGB: 'dgb',
+  SUM: 'sum'
 }
 
 function getDefaultBip32Mainnet () {
@@ -211,4 +212,17 @@ module.exports = {
     wif: 0x2e,
     coin: coins.DGB
   },
+  sumcoin: {
+    messagePrefix: '\x19Sumcoin Signed Message:\n',
+    bip32: {
+      // base58 'xpub'
+      public: 0x0488b41c,
+      // base58 'xprv'
+      private: 0x0488abe6
+    },
+    pubKeyHash: 0x3f,
+    scriptHash: 0xbf,
+    wif: 0x2e,
+    coin: coins.SUM
+  }
 }

@@ -56,6 +56,8 @@ function getMainnet (network) {
       return networks.bitgreen
     case networks.digibyte:
       return networks.digibyte
+    case networks.sumcoin:
+      return networks.sumcoin
   }
   throw new TypeError(`invalid network`)
 }
@@ -189,6 +191,14 @@ function isBitgreen (network) {
 function isDigibyte (network) {
   return getMainnet(network) === networks.digibyte
 }
+
+/**
+ * @param {Network} network
+ * @returns {boolean} returns true iff network is any of the network stated in the argument
+ */
+function isSumCoin (network) {
+  return getMainnet(network) === networks.sumcoin
+}
 const isValidNetwork = typeforce.oneOf(
   isBitcoin,
   isBitcoinCash,
@@ -198,7 +208,8 @@ const isValidNetwork = typeforce.oneOf(
   isLitecoin,
   isZcash,
   isBitgreen,
-  isDigibyte
+  isDigibyte,
+  isSumCoin
 )
 
 module.exports = {
@@ -211,7 +222,7 @@ module.exports = {
   ZEC: networks.zcash.coin,
   BITG: networks.bitgreen.coin,
   DGB: networks.digibyte.coin,
-
+  SUM: networks.sumcoin.coin,
   getNetworkList,
   getNetworkName,
 
@@ -228,7 +239,8 @@ module.exports = {
   isDash,
   isLitecoin,
   isZcash,
-
+  isDigibyte,
+  isSumCoin,
   isValidNetwork,
   /**
    * @deprecated: use isValidNetwork
