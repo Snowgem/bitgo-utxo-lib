@@ -24,7 +24,8 @@ const coins = {
   DASH: 'dash',
   BITG: 'bitg',
   DGB: 'dgb',
-  SUM: 'sum'
+  SUM: 'sum',
+  DOGE: 'doge'
 }
 
 function getDefaultBip32Mainnet () {
@@ -224,5 +225,18 @@ module.exports = {
     scriptHash: 0xbf,
     wif: 0x2e,
     coin: coins.SUM
-  }
+  },
+  dogecoin: {
+    messagePrefix: '\x19Dogecoin Signed Message:\n',
+    bip32: {
+      // base58 'xpub'
+      public: 0x02facafd,
+      // base58 'xprv'
+      private: 0xfac398
+    },
+    pubKeyHash: 0x1e,
+    scriptHash: 0x16,
+    wif: 0x9e,
+    coin: coins.DOGE
+  },
 }
